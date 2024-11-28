@@ -10,10 +10,11 @@ body {
   color: #333;
 }
 
-/* Full-Screen Hero Section with Video Background */
+/* Ensure the video is full-screen and covers the entire background */
 .hero {
   position: relative;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
 
@@ -23,8 +24,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire section */
-  z-index: -1; /* Places the video behind content */
+  object-fit: cover;
+  z-index: -1; /* Place the video behind the content */
 }
 
 .hero-content {
@@ -33,28 +34,47 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  z-index: 1; /* Keeps the text above the video */
+  color: white; /* White text color */
+  z-index: 1;
 }
 
-.hero h1 {
+.hero .hero-content h1 {
   font-family: "Playfair Display", serif;
-  font-size: 4rem;
-  margin-bottom: 10px;
+  font-size: 4rem; /* Adjust to fit your design */
+  margin-bottom: 0.5rem;
   color: #ffd700; /* Gold */
 }
 
-.hero .date {
+.hero .hero-content h1 .ampersand {
+  display: block;
+  font-size: 5rem; /* Make the ampersand a bit larger */
+}
+
+.hero .hero-content .date {
+  margin: 30px 0;
+}
+
+.date p {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
-  color: #ffd700; /* Gold */
+  margin: 0.2rem 0;
 }
 
-.hero .quote {
-  font-style: italic;
+/* Quote styling to prevent wrapping, but move attribution to next line */
+.quote {
   font-size: 1.2rem;
-  color: #f0f0f0;
+  font-style: italic;
+  max-width: 600px; /* Limit width to control wrapping */
+  margin: 20px auto 0;
+  white-space: nowrap; /* Prevent the quote itself from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show "..." if the quote is too long */
+}
+
+.quote .attribution {
+  display: block; /* Moves the attribution to a new line */
+  margin-top: 10px; /* Adds some space between the quote and attribution */
+  font-size: 1rem; /* Smaller font for the attribution */
 }
 
 /* Emerald Green Section (Ceremony Details) */
@@ -82,6 +102,26 @@ body {
   margin-bottom: 20px;
 }
 
+/* Make the map container responsive */
+.map-container {
+  position: relative;
+  width: 100%; /* Takes full width of the parent container */
+  padding-bottom: 56.25%; /* Aspect ratio of 16:9 (height/width = 9/16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Make the iframe fill the container */
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .details h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
@@ -98,6 +138,7 @@ body {
   padding: 20px;
   margin: 20px 0;
   background-color: white;
+  text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
@@ -116,6 +157,7 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   margin-bottom: 15px;
+  color: #3a6d45; /* Emerald Green */
 }
 
 .rsvp p {
@@ -167,7 +209,8 @@ body {
   line-height: 1.6;
 }
 
-.share-icon img {
+.share-icon p {
+  align-items: center;
   width: 60px;
   height: 60px;
   margin-top: 20px;
@@ -208,14 +251,14 @@ body {
 /* Attire & Theme Section */
 .attire-theme {
   padding: 40px 20px;
+  margin: 20px 0;
   background-color: white;
   text-align: center;
 }
 
 .attire-theme h2 {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 2rem;
   color: #3a6d45; /* Emerald Green */
 }
 
@@ -224,7 +267,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .attire-icons {
@@ -257,6 +300,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
   color: #555;
+}
+
+.attire-text p span {
+  color: #3a6d45; /* Emerald Green */
+  font-weight: bold;
 }
 
 /* Color Palette for Shades of Green */
@@ -322,8 +370,10 @@ body {
 /* Gift Guide Section */
 .gift-guide {
   padding: 20px;
-  margin: 20px 0;
-  background-color: white;
+  margin: 20px 0px;
+  background-color: #3a6d45; /* Emerald Green */
+  color: white;
+  text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -339,11 +389,16 @@ body {
   line-height: 1.6;
 }
 
+.gift-guide p span {
+  font-weight: bold;
+}
+
 /* Snap & Share Section */
 .snap-share {
   padding: 20px;
   margin: 20px 0;
   background-color: white;
+  text-align: center;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -352,6 +407,7 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   margin-bottom: 10px;
+  color: #3a6d45; /* Emerald Green */
 }
 
 .snap-share p {
@@ -363,8 +419,6 @@ body {
 footer {
   text-align: center;
   padding: 15px;
-  background-color: #3a6d45; /* Emerald Green */
-  color: white;
 }
 
 footer p {
@@ -373,18 +427,6 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero .date {
-    font-size: 1.2rem;
-  }
-
-  .hero .quote {
-    font-size: 1rem;
-  }
-
   h2 {
     font-size: 1.5rem;
   }
@@ -401,5 +443,24 @@ footer p {
     width: 100%;
     padding: 15px;
     font-size: 1.2rem;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem; /* Reduce font size on smaller screens */
+  }
+
+  .hero h1 .ampersand {
+    font-size: 2.5rem; /* Adjust ampersand size on smaller screens */
+  }
+
+  .date p {
+    font-size: 1.5rem;
+  }
+
+  .quote {
+    font-size: 0.9rem; /* Reduce quote font size */
   }
 }
