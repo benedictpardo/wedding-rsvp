@@ -10,6 +10,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -20,10 +25,24 @@
           Your browser does not support the video tag.
         </video>
         <div class="hero-content">
-          <h1>Rico <span class="ampersand">&</span> Ihna</h1>
+          <div class="">TOGETHER WITH THEIR FAMILIES</div>
+          <div class="title">Rico <span class="ampersand">&</span> Ihna</div>
+          <div class="">INVITE YOU TO CELEBRATE THEIR WEDDING DAY</div>
           <div class="date">
-            <p>SATURDAY</p>
-            <p>JAN | 25 | 2025</p>
+            ON SATURDAY,<br />
+            JANUARY 25, 2025
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="showcase-section">
+          <div class="showcase-image-container">
+            <img
+              src="assets/fwdricoihna/IMG_0407.jpeg"
+              alt="Showcase Image"
+              class="showcase-image"
+            />
           </div>
           <p class="quote">
             "I have found the one whom my soul loves."
@@ -31,6 +50,23 @@
           </p>
         </div>
       </section>
+
+      <div class="swiper">
+        <!-- Wrapper for slides -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/entourage/1.jpg" alt="Slide 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/entourage/2.jpg" alt="Slide 2" />
+          </div>
+        </div>
+        <!-- Navigation controls -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
 
       <!-- Ceremony Details Section -->
       <section class="details">
@@ -140,6 +176,11 @@
       <footer>
         <p>&copy; 2024 Rico & Ihna. All rights reserved.</p>
       </footer>
+
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      <script src="js/script.js"></script>
     </div>
   </body>
 </html>
